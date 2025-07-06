@@ -1,125 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evol.U.Zion | O Tempo da Revolução Humana</title>
+  <title>Evol.U.Zion</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --background-dark: #0e0e0e;
+      --background-light: #f4f4f4;
+      --text-dark: #ffffff;
+      --text-light: #000000;
+      --primary-color: #00ff99;
+      --accent-color: #09f;
     }
+
     body {
+      margin: 0;
       font-family: 'Share Tech Mono', monospace;
-      background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
-      color: #e0e0e0;
-      overflow-x: hidden;
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+      transition: all 0.4s ease;
     }
+
+    .light-mode {
+      background-color: var(--background-light);
+      color: var(--text-light);
+    }
+
     header {
       padding: 2rem;
       text-align: center;
-      background-color: #121212;
-      border-bottom: 2px solid #0f0;
     }
-    header h1 {
-      font-size: 2.5rem;
-      color: #0f0;
+
+    h1 {
+      font-size: 3rem;
+      color: var(--primary-color);
     }
-    header p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
+
+    .section {
+      padding: 2rem;
+      max-width: 800px;
       margin: auto;
     }
-    section h2 {
-      font-size: 2rem;
-      color: #0f0;
-      margin-bottom: 1rem;
-      border-left: 4px solid #0f0;
-      padding-left: 1rem;
+
+    h2 {
+      color: var(--accent-color);
     }
-    section p, li {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ddd;
-    }
-    ul {
-      margin-top: 1rem;
-      padding-left: 2rem;
-    }
-    footer {
+
+    .nav {
       text-align: center;
-      padding: 2rem;
-      border-top: 2px solid #0f0;
-      color: #777;
-      background-color: #121212;
+      margin-top: 2rem;
     }
-    a {
-      color: #00ff99;
-      text-decoration: none;
+
+    .nav button {
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: transparent;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .nav button:hover {
+      background-color: var(--primary-color);
+      color: black;
     }
-    .highlight {
-      color: #00ff99;
-      font-weight: bold;
+
+    .toggle-mode {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
+
 <body>
+  <button class="toggle-mode" onclick="toggleMode()">🌗 Alternar Modo</button>
+
   <header>
-    <h1>EVOL.U.ZION</h1>
-    <p>Onde cada segundo de vida tem valor. A revolução não será televisionada. Ela será sentida, vivida e construída em rede.</p>
+    <h1>Evol.U.Zion</h1>
+    <p>"Se o tempo é vida, então viver é revolucionar."</p>
   </header>
 
-  <section>
-    <h2>🌌 O Que É a Evol.U.Zion?</h2>
-    <p>Mais do que um ecossistema digital. A Evol.U.Zion é uma <span class="highlight">tecnologia de libertação humana</span>. Um espaço onde o <strong>Tempo de Vida</strong> torna-se o verdadeiro ativo, onde a governança é do povo e a economia é colaborativa.</p>
-  </section>
+  <div class="nav">
+    <button onclick="navigate('manifesto')">Manifesto</button>
+    <button onclick="navigate('principios')">Princípios</button>
+    <button onclick="navigate('sistemas')">Sistemas</button>
+    <button onclick="navigate('tvt')">TVT & TVDT</button>
+    <button onclick="navigate('whitepaper')">Whitepaper</button>
+  </div>
 
-  <section>
-    <h2>🧬 Princípios Fundamentais</h2>
-    <ul>
-      <li><strong>Tempo:</strong> Nosso bem mais precioso. O TVT valoriza cada segundo destinado à tela como contribuição à evolução coletiva.</li>
-      <li><strong>Oportunidade:</strong> Redes abertas. Algoritmos transparentes. Quebramos as bolhas para que novas conexões floresçam.</li>
-      <li><strong>Vontade:</strong> Não seguimos. Criamos. Aqui, a vontade de mudar é combustível real.</li>
-      <li><strong>Recompensa:</strong> Nada é desperdiçado. Toda interação pode gerar retorno, redistribuindo valor à comunidade.</li>
-    </ul>
-  </section>
+  <div class="section" id="content">
+    <h2>Bem-vindo à Evol.U.Zion</h2>
+    <p>Um ecossistema que nasce do futuro para resgatar o agora.</p>
+    <p>Explore nossos princípios, sistemas e caminhos de transformação social, digital e existencial.</p>
+  </div>
 
-  <section>
-    <h2>🔮 Sistemas Conectados</h2>
-    <ul>
-      <li><strong>Alethéia:</strong> Governança descentralizada. Votação imutável. Decisões coletivas registradas na blockchain.</li>
-      <li><strong>Harmonix:</strong> Sua identidade viva. Uma rede social onde o algoritmo obedece você.</li>
-      <li><strong>Gest.Um:</strong> A economia justa começa na prática. Gestão financeira aliada à renda universal.</li>
-      <li><strong>Map.E.N.:</strong> O mapa da nova era. Onde cada pessoa se conecta à terra, à água, ao alimento e às oportunidades reais.</li>
-      <li><strong>Nexus:</strong> O jogo-simulador que acelera futuros. Decida, veja os impactos, refine o mundo.</li>
-      <li><strong>Perfilazion:</strong> Você decide como será lido pelo sistema. Nenhuma identidade te limita.</li>
-    </ul>
-  </section>
+  <script>
+    const content = document.getElementById('content');
 
-  <section>
-    <h2>💰 TVT e TVDT</h2>
-    <p>Cada ser humano recebe um token TVT que representa sua longevidade projetada: 45.089 dias.</p>
-    <p>A cada milésimo de segundo que você dedica às telas de forma consciente, você gera valor e recebe <span class="highlight">TVDT</span>, que se converte em TVT. Um sistema que respeita seu tempo e transforma o mundo.</p>
-  </section>
+    function navigate(section) {
+      let html = '';
+      switch (section) {
+        case 'manifesto':
+          html = `
+            <h2>Manifesto Evol.U.Zion</h2>
+            <p>Somos filhos da urgência e arquitetos da esperança. Acreditamos no tempo como ativo mais precioso, na tecnologia como extensão da consciência e na descentralização como caminho para a justiça.</p>
+            <p>Não queremos seguidores, queremos criadores. Quem acessa a Evol.U.Zion está pronto para se tornar causa e consequência da sua própria liberdade.</p>
+          `;
+          break;
+        case 'principios':
+          html = `
+            <h2>Princípios Fundamentais</h2>
+            <ul>
+              <li><strong>Tempo:</strong> O Tempo de Vida como medida de valor e base da dignidade.</li>
+              <li><strong>Oportunidade:</strong> Derrubar bolhas e abrir caminhos.</li>
+              <li><strong>Vontade:</strong> Desejo ativo de transformação consciente.</li>
+              <li><strong>Recompensa:</strong> Redistribuição justa da riqueza digital.</li>
+            </ul>
+          `;
+          break;
+        case 'sistemas':
+          html = `
+            <h2>Sistemas da Evol.U.Zion</h2>
+            <ul>
+              <li><strong>Alethéia:</strong> Governança descentralizada com transparência radical.</li>
+              <li><strong>Nexus:</strong> Jogo-simulador de realidades futuras.</li>
+              <li><strong>Harmonix:</strong> Espelho digital da identidade consciente.</li>
+              <li><strong>GestUm:</strong> Economia colaborativa e gestão cotidiana.</li>
+              <li><strong>Map.E.N.:</strong> Cartografia social de oportunidades reais.</li>
+              <li><strong>Perfilazion:</strong> Perfil inteligente e ajustável, moldado pelo usuário.</li>
+            </ul>
+          `;
+          break;
+        case 'tvt':
+          html = `
+            <h2>TVT e TVDT</h2>
+            <p><strong>TVT</strong> — Tempo de Vida Token: cada ser humano recebe 1 TVT, representando 45.089 dias de vida, com base na longevidade máxima registrada. O tempo se torna o lastro da moeda.</p>
+            <p><strong>TVDT</strong> — Tempo de Vida Destinado às Telas: mede e recompensa o tempo digital consciente, convertendo em valor real, de forma justa e distribuída.</p>
+          `;
+          break;
+        case 'whitepaper':
+          html = `
+            <h2>Whitepaper</h2>
+            <p>Baixe o documento completo explicando as fórmulas D-TVDT-D e TVDT-Coin, a estrutura do ecossistema Evol.U.Zion, as camadas de governança e o caminho para uma nova moeda digital global fundamentada na vida humana.</p>
+            <a href="#" style="color: var(--primary-color);">Clique aqui para baixar o whitepaper (em breve)</a>
+          `;
+          break;
+      }
+      content.innerHTML = html;
+    }
 
-  <section>
-    <h2>🚀 Junte-se à Revolução Silenciosa</h2>
-    <p>Não pedimos sua fé. Pedimos seu <strong>tempo</strong>. Não impomos verdades. Criamos realidades simuláveis. O que você vê aqui, você pode viver.</p>
-    <p><a href="#">Acesse o SuperApp</a> e seja parte da transição.</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Evol.U.Zion | www.evoluzion.space</p>
-  </footer>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 </body>
+
 </html>
