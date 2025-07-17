@@ -1,1 +1,72 @@
-.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zona Z - Hub de Projetos</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffffcc;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hub-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .hub-button {
+      background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hub-button:hover {
+      background-color: #444;
+      transform: scale(1.03);
+    }
+
+    .credits {
+      margin-top: 50px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zona Z – Hub de Projetos</h1>
+  <div class="hub-container">
+    <a href="../harmonix" class="hub-button">🔗 Harmonix</a>
+    <a href="../nexus" class="hub-button">🎮 Nexus</a>
+    <a href="../aletheia" class="hub-button">🧠 Alethéia</a>
+    <a href="../gestum" class="hub-button">📊 GestUm</a>
+    <a href="../mapen" class="hub-button">🗺️ MapE.N.</a>
+    <a href="../lab" class="hub-button">🧪 Laboratório</a>
+    <a href="../migro" class="hub-button">🌎 Eu Migro</a>
+  </div>
+  <div class="credits">
+    Evol.U.Zion &copy; 2025 | Acesso interno
+  </div>
+</body>
+</html>
